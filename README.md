@@ -6,18 +6,20 @@ A bespoke, luxury web application engineered for **Mamello Molise** (MelloM Lash
 
 The repository has been configured with `base: './'` in `vite.config.ts`, making it completely ready for GitHub Pages hosting at `https://obsidianstudiodesigns.github.io/MelloM_Lashes/`.
 
-### Quick Deploy Steps:
+### Quick Auto-Build & Deploy Steps:
 
-1. **Link your GitHub repository:**
+1. **Push your code to GitHub:**
    ```bash
    git remote add origin https://github.com/obsidianstudiodesigns/MelloM_Lashes.git
    git push -u origin main
    ```
 
-2. **Deploy to GitHub Pages:**
-   - In your GitHub repository, navigate to **Settings** > **Pages**.
-   - Under **Build and deployment**, select **Deploy from a branch** > branch: `main` (or run `npm run build` and deploy the `dist` folder).
-   - Alternatively, use GitHub Actions for static HTML/Vite deployment.
+2. **Enable GitHub Actions Auto-Build in GitHub Settings:**
+   - On GitHub, go to your repository: `https://github.com/obsidianstudiodesigns/MelloM_Lashes`
+   - Click **Settings** (top right tab) &gt; **Pages** (in the left sidebar)
+   - Under **Build and deployment** &gt; **Source**, change from *"Deploy from a branch"* to **"GitHub Actions"**
+   - That's it! GitHub Actions will immediately detect `.github/workflows/deploy.yml`, trigger the automated build, and publish the site live at `https://obsidianstudiodesigns.github.io/MelloM_Lashes/`.
+   - Any future `git push` to `main` will automatically build and re-deploy the site!
 
 ## Features Included:
 - **Responsive Dual-Hero**: Renders vertical 9:16 mobile composition on phones and wide 16:9 cinematic beauty canvas on desktops.
