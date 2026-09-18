@@ -1,13 +1,16 @@
-import logoImg from '../assets/images/mello_m_logo_1789731203378.jpg';
-import heroDesktopImg from '../assets/images/hero_desktop_1789731217537.jpg';
-import heroMobileImg from '../assets/images/hero_mobile_1789731237318.jpg';
+import userLogoImg from '../assets/images/logo.jpg';
+import userLandingPageImg from '../assets/images/Landing page.jpg';
+import userLandingPageMobileImg from '../assets/images/lanidng page mobile.jpg';
 import wigStylingImg from '../assets/images/wig_styling_1789731251336.jpg';
 import bridalGlamImg from '../assets/images/bridal_glam_1789731266973.jpg';
 
 export const ASSETS = {
-  logo: logoImg,
-  heroDesktop: heroDesktopImg,
-  heroMobile: heroMobileImg,
+  logo: userLogoImg,
+  landingPage: userLandingPageImg,
+  landingPageMobile: userLandingPageMobileImg,
+  heroDesktop: userLandingPageImg,
+  heroMobile: userLandingPageMobileImg,
   wigStyling: wigStylingImg,
   bridalGlam: bridalGlamImg,
 };
+

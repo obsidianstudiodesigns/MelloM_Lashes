@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 overflow-hidden rounded-full border border-amber-500/40 p-0.5">
+            <div className="flex items-center gap-3.5">
+              <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-amber-500/40 bg-stone-950 p-0.5 shadow-lg shadow-amber-500/10 shrink-0">
                 <img
                   src={ASSETS.logo}
                   alt="MelloM Lashes & Beauty Logo"

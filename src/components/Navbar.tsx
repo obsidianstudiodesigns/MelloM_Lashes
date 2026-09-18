@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Brand identity */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-amber-500/40 p-0.5 shadow-md shadow-amber-500/10 transition-transform group-hover:scale-105">
+          <div className="relative h-12 w-12 sm:h-13 sm:w-13 overflow-hidden rounded-full border-2 border-amber-500/40 bg-stone-950 p-0.5 shadow-lg shadow-amber-500/15 transition-all group-hover:scale-105 group-hover:border-amber-400">
             <img
               src={ASSETS.logo}
               alt="MelloM Lashes & Beauty Logo"
