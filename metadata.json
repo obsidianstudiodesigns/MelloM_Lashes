@@ -1,0 +1,6 @@
+{
+  "name": "MelloM Lashes & Beauty",
+  "description": "Premium Makeup Artistry, Lash Enhancements, Wig Care & Custom Installations with House Call Services by Mamello Molise.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
