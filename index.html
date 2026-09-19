@@ -3,19 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Page Title & Search Metadata -->
     <title>MelloM Lashes & Beauty | Luxury Makeup Artistry & Hair Studio</title>
-    <meta name="description" content="Exclusive Makeup Artistry, Lash Enhancements, Wig Care, Treatments and Installations by Mamello Molise. Studio visits & House calls available." />
-    <meta property="og:title" content="MelloM Lashes & Beauty | Luxury Makeup Artistry & Hair Studio" />
-    <meta property="og:description" content="Exclusive Makeup Artistry, Lash Enhancements, Wig Care, Treatments and Installations by Mamello Molise. Studio visits & House calls available." />
+    <meta
+      name="description"
+      content="Premium Makeup Artistry, Lash Enhancements, Wig Care & Custom Installations with House Call Services by Mamello Molise."
+    />
+    <meta name="keywords" content="MelloM Lashes and Beauty, Mamello Molise, makeup artist, bridal makeup, lash extensions, wig install, wig revamp, wig wash and melt, house call beauty, South Africa makeup" />
+    <meta name="author" content="Mamello Molise" />
+    <meta name="theme-color" content="#fdfbf7" />
+
+    <!-- Googlebot & Search Indexing Directives -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Canonical URL dynamically attached to avoid build-time directory resolution -->
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = window.location.origin + window.location.pathname;
+        document.head.appendChild(link);
+      })();
+    </script>
+
+    <!-- OpenGraph / Facebook Social Cards -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MelloM Lashes & Beauty" />
+    <meta property="og:title" content="MelloM Lashes & Beauty | Luxury Makeup Artistry & Hair Studio" />
+    <meta
+      property="og:description"
+      content="Premium Makeup Artistry, Lash Enhancements, Wig Care & Custom Installations with House Call Services by Mamello Molise."
+    />
+    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image:alt" content="MelloM Lashes & Beauty Luxury Artistry Logo" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="twitter:title" content="MelloM Lashes & Beauty | Luxury Makeup Artistry & Hair Studio" />
+    <meta
+      name="twitter:description"
+      content="Premium Makeup Artistry, Lash Enhancements, Wig Care & Custom Installations with House Call Services by Mamello Molise."
+    />
+    <meta name="twitter:image" content="/favicon.png" />
+    <meta name="twitter:creator" content="@Molise.m" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Results & Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "MelloM Lashes & Beauty",
+      "image": "/favicon.png",
+      "description": "Premium Makeup Artistry, bespoke Lash Enhancements, weekly Wig Care, Treatment & Installation by Mamello Molise.",
+      "telephone": "+27676410352",
+      "priceRange": "$$",
+      "currenciesAccepted": "ZAR",
+      "paymentAccepted": "Cash, EFT",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Town & Surrounding Locations (House Calls Available)"
+        }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mamello Molise",
+        "jobTitle": "Lead Makeup Artist & Hair Stylist"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Beauty & Hair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Luxury Bridal & Wedding Glam"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soft Glam & Daytime Artistry"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Matric Dance & Prom Full Beat"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Classic & Hybrid Lash Extensions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Volume Dramatic Lash Set"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wig Wash, Deep Treatment & Thermal Style"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lace Frontal & Closure Wig Installation"
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body class="bg-[#fdfbf7] text-stone-900 antialiased selection:bg-amber-200 selection:text-amber-950">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

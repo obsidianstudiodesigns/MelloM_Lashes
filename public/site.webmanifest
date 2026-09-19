@@ -1,0 +1,26 @@
+{
+  "name": "MelloM Lashes & Beauty",
+  "short_name": "MelloM",
+  "description": "Luxury Makeup Artistry, Lash Enhancements, Wig Care & Custom Installations by Mamello Molise.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfbf7",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

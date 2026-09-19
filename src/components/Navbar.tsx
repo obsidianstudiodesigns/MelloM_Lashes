@@ -23,27 +23,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* Main navigation */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Brand identity */}
-        <a href="#" className="flex items-center gap-3.5 sm:gap-4 group">
-          <div className="relative h-15 w-15 sm:h-18 sm:w-18 md:h-20 md:w-20 overflow-hidden rounded-full border-2 border-amber-500/60 bg-white p-0.5 shadow-md shadow-amber-900/10 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-600 shrink-0">
+        <a href="#" className="flex items-center group py-1" aria-label="MelloM Lashes & Beauty Home">
+          <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 overflow-hidden rounded-full border-2 border-amber-500/70 bg-white p-0.5 shadow-lg shadow-amber-900/15 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-600 shrink-0">
             <img
               src={ASSETS.logo}
               alt="MelloM Lashes & Beauty Logo"
               referrerPolicy="no-referrer"
               className="h-full w-full rounded-full object-cover"
             />
-          </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="font-serif-luxury text-2xl sm:text-3xl font-bold tracking-wide text-stone-900 group-hover:text-amber-700 transition-colors">
-                MelloM
-              </span>
-              <span className="text-xs sm:text-sm uppercase tracking-widest text-amber-700 font-semibold">
-                Lashes & Beauty
-              </span>
-            </div>
-            <span className="text-xs text-stone-500 tracking-wider">
-              By Mamello Molise • Luxury Artistry
-            </span>
           </div>
         </a>
 

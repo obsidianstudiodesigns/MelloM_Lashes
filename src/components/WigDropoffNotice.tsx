@@ -125,7 +125,7 @@ export const WigDropoffNotice: React.FC<WigDropoffNoticeProps> = ({ onSelectWigS
                 <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/40 bg-white/90 p-3 backdrop-blur-md shadow-lg">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-stone-900">Wig Treatment & Revamp</span>
-                    <span className="text-xs font-bold text-amber-700">From R250</span>
+                    <span className="text-xs font-semibold text-amber-700">Wash, Treat & Melt</span>
                   </div>
                   <div className="flex items-center gap-2 text-[11px] text-stone-600 mt-1">
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />

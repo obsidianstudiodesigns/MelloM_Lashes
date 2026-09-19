@@ -67,9 +67,6 @@ export const BeforeAfterGallery: React.FC = () => {
               referrerPolicy="no-referrer"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute top-4 right-4 rounded-full bg-white/90 border border-amber-300/80 px-3.5 py-1 text-xs font-bold text-amber-900 shadow-sm backdrop-blur-md">
-              AFTER: Signature Glam & Lashes
-            </div>
 
             {/* Before Image (Clipped overlay: African woman without makeup) */}
             <div
@@ -83,9 +80,6 @@ export const BeforeAfterGallery: React.FC = () => {
                 className="absolute inset-0 h-full object-cover object-center max-w-none"
                 style={{ width: containerWidth > 0 ? `${containerWidth}px` : '100%' }}
               />
-              <div className="absolute top-4 left-4 rounded-full bg-white/90 border border-stone-200 px-3.5 py-1 text-xs font-semibold text-stone-800 shadow-sm backdrop-blur-md">
-                BEFORE: Natural Bare Face
-              </div>
             </div>
 
             {/* Draggable Divider Line */}
