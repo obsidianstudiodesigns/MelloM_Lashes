@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Home, Sparkles, CheckCircle2, ShieldCheck, Sun, Zap, ArrowRight } from 'lucide-react';
+import { MapPin, Home, Sparkles, CheckCircle2, ShieldCheck, Sun, Zap, MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO, HOUSE_CALL_TIERS } from '../data/servicesData';
 
 interface HouseCallGuideProps {
@@ -73,13 +73,22 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <a
+                href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=Hi%20Mamello!%20I%20would%20like%20to%20request%20a%20house%20call%20for%20a%20glam%20session.%20Here%20is%20my%20location:`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-xs sm:text-sm font-bold text-white shadow-lg active:scale-98 transition-all"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Request House Call on WhatsApp</span>
+              </a>
+
               <button
                 onClick={onBookHouseCall}
-                className="flex items-center gap-2 rounded-xl bg-amber-500 hover:bg-amber-400 px-6 py-3.5 text-xs sm:text-sm font-bold text-stone-950 shadow-lg shadow-amber-500/20 active:scale-98 transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl border border-amber-500/40 bg-stone-900 px-5 py-3.5 text-xs sm:text-sm font-semibold text-amber-300 hover:bg-stone-800 transition-all"
               >
-                <span>Calculate Your House Call Rate & Book</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Browse Services</span>
               </button>
             </div>
           </div>

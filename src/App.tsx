@@ -8,7 +8,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { WigDropoffNotice } from './components/WigDropoffNotice';
 import { ServiceMenu } from './components/ServiceMenu';
-import { InteractiveBookingCalculator } from './components/InteractiveBookingCalculator';
 import { BeforeAfterGallery } from './components/BeforeAfterGallery';
 import { HouseCallGuide } from './components/HouseCallGuide';
 import { PortfolioGallery } from './components/PortfolioGallery';
@@ -16,14 +15,11 @@ import { Testimonials } from './components/Testimonials';
 import { FAQPolicy } from './components/FAQPolicy';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { ClientValueModal } from './components/ClientValueModal';
 import { ServiceItem } from './types';
 import { SERVICES } from './data/servicesData';
 
 export default function App() {
-  // Pre-select popular bridal glam as initial engaging state
   const [selectedServices, setSelectedServices] = useState<ServiceItem[]>([SERVICES[0]]);
-  const [whyWebsiteOpen, setWhyWebsiteOpen] = useState(false);
 
   const handleToggleService = (service: ServiceItem) => {
     setSelectedServices((prev) => {
@@ -36,12 +32,8 @@ export default function App() {
     });
   };
 
-  const handleClearServices = () => {
-    setSelectedServices([]);
-  };
-
-  const scrollToBooking = () => {
-    const el = document.getElementById('booking-calculator');
+  const scrollToServices = () => {
+    const el = document.getElementById('services');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -59,11 +51,7 @@ export default function App() {
     if (wigService && !selectedServices.some((s) => s.id === wigService.id)) {
       setSelectedServices((prev) => [...prev, wigService]);
     }
-    scrollToBooking();
-  };
-
-  const handleBookHouseCall = () => {
-    scrollToBooking();
+    scrollToServices();
   };
 
   const selectedServiceIds = selectedServices.map((s) => s.id);
@@ -72,13 +60,12 @@ export default function App() {
     <div className="min-h-screen bg-[#0c0a09] text-stone-100 font-sans selection:bg-amber-500/30 selection:text-amber-200">
       {/* Top Navbar */}
       <Navbar
-        onOpenBooking={scrollToBooking}
-        onOpenWhyWebsite={() => setWhyWebsiteOpen(true)}
+        onOpenBooking={scrollToServices}
       />
 
-      {/* Hero Section */}
+      {/* Hero Section with Big Day Specialist 3D Tile */}
       <Hero
-        onOpenBooking={scrollToBooking}
+        onOpenBooking={scrollToServices}
         onScrollToWig={scrollToWig}
       />
 
@@ -87,18 +74,11 @@ export default function App() {
         onSelectWigService={handleSelectWigService}
       />
 
-      {/* Comprehensive Service Catalog */}
+      {/* Comprehensive Service Catalog with Photorealistic Images */}
       <ServiceMenu
         selectedServiceIds={selectedServiceIds}
         onToggleService={handleToggleService}
-        onGoToBooking={scrollToBooking}
-      />
-
-      {/* Interactive Booking & Price Calculator */}
-      <InteractiveBookingCalculator
-        selectedServices={selectedServices}
-        onToggleService={handleToggleService}
-        onClearServices={handleClearServices}
+        onGoToBooking={scrollToServices}
       />
 
       {/* Interactive Before & After Glam Slider */}
@@ -106,7 +86,7 @@ export default function App() {
 
       {/* House Call & Distance Information Guide */}
       <HouseCallGuide
-        onBookHouseCall={handleBookHouseCall}
+        onBookHouseCall={scrollToServices}
       />
 
       {/* Visual Artistry Portfolio */}
@@ -121,15 +101,9 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating Action Button */}
+      {/* Floating WhatsApp Action Button */}
       <FloatingWhatsApp
-        onOpenBooking={scrollToBooking}
-      />
-
-      {/* Client Value Modal ("Why MelloM Needs A Website") */}
-      <ClientValueModal
-        isOpen={whyWebsiteOpen}
-        onClose={() => setWhyWebsiteOpen(false)}
+        onOpenBooking={scrollToServices}
       />
     </div>
   );

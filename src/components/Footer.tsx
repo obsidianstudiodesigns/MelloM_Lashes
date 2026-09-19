@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3.5">
-              <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-amber-500/40 bg-stone-950 p-0.5 shadow-lg shadow-amber-500/10 shrink-0">
+            <div className="flex items-center gap-4">
+              <div className="h-18 w-18 sm:h-20 sm:w-20 overflow-hidden rounded-full border-2 border-amber-500/50 bg-stone-950 p-0.5 shadow-xl shadow-amber-500/20 shrink-0">
                 <img
                   src={ASSETS.logo}
                   alt="MelloM Lashes & Beauty Logo"
@@ -23,10 +23,10 @@ export const Footer: React.FC = () => {
                 />
               </div>
               <div>
-                <span className="font-serif-luxury text-2xl font-bold tracking-wide text-stone-100">
+                <span className="font-serif-luxury text-2xl sm:text-3xl font-bold tracking-wide text-stone-100">
                   MelloM
                 </span>
-                <span className="block text-xs uppercase tracking-widest text-amber-400 font-semibold">
+                <span className="block text-xs sm:text-sm uppercase tracking-widest text-amber-400 font-semibold">
                   Lashes & Beauty
                 </span>
               </div>

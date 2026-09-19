@@ -5,10 +5,9 @@ import { ASSETS } from '../data/assets';
 
 interface NavbarProps {
   onOpenBooking: () => void;
-  onOpenWhyWebsite?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -61,8 +60,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
       {/* Main navigation */}
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Brand identity */}
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-12 sm:h-13 sm:w-13 overflow-hidden rounded-full border-2 border-amber-500/40 bg-stone-950 p-0.5 shadow-lg shadow-amber-500/15 transition-all group-hover:scale-105 group-hover:border-amber-400">
+        <a href="#" className="flex items-center gap-3.5 sm:gap-4 group">
+          <div className="relative h-15 w-15 sm:h-18 sm:w-18 md:h-20 md:w-20 overflow-hidden rounded-full border-2 border-amber-500/50 bg-stone-950 p-0.5 shadow-xl shadow-amber-500/20 transition-all duration-300 group-hover:scale-105 group-hover:border-amber-400 shrink-0">
             <img
               src={ASSETS.logo}
               alt="MelloM Lashes & Beauty Logo"
@@ -71,15 +70,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
             />
           </div>
           <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="font-serif-luxury text-xl font-bold tracking-wide text-stone-100 sm:text-2xl group-hover:text-amber-200 transition-colors">
+            <div className="flex items-center gap-2">
+              <span className="font-serif-luxury text-2xl sm:text-3xl font-bold tracking-wide text-stone-100 group-hover:text-amber-200 transition-colors">
                 MelloM
               </span>
-              <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold">
+              <span className="text-xs sm:text-sm uppercase tracking-widest text-amber-400 font-semibold">
                 Lashes & Beauty
               </span>
             </div>
-            <span className="text-[11px] text-stone-400 tracking-wider">
+            <span className="text-xs text-stone-400 tracking-wider">
               By Mamello Molise • Luxury Artistry
             </span>
           </div>
@@ -100,16 +99,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
 
         {/* Action CTAs */}
         <div className="hidden sm:flex items-center gap-3">
-          {onOpenWhyWebsite && (
-            <button
-              onClick={onOpenWhyWebsite}
-              className="text-xs font-semibold px-3 py-2 rounded-lg text-amber-300/90 border border-amber-500/30 hover:bg-amber-500/10 transition-all"
-              title="Click to see why this website delivers high return on investment"
-            >
-              Why This Website?
-            </button>
-          )}
-
           <a
             href={`tel:${BUSINESS_INFO.phoneRaw}`}
             className="flex items-center gap-1.5 rounded-lg border border-stone-800 bg-stone-900/80 px-3.5 py-2 text-xs font-semibold text-stone-200 hover:bg-stone-800 transition-colors"
@@ -123,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
             className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 px-4 py-2 text-xs font-bold text-stone-950 shadow-lg shadow-amber-500/20 hover:brightness-110 active:scale-95 transition-all"
           >
             <Calendar className="h-3.5 w-3.5 text-stone-950" />
-            <span>Calculate & Book</span>
+            <span>Book Appointment</span>
           </button>
         </div>
 
@@ -163,18 +152,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenWhyWebsite 
             ))}
 
             <div className="mt-2 pt-3 border-t border-stone-800/80 flex flex-col gap-2">
-              {onOpenWhyWebsite && (
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenWhyWebsite();
-                  }}
-                  className="w-full text-center text-xs font-semibold py-2 rounded-lg text-amber-300 border border-amber-500/30 bg-amber-950/20"
-                >
-                  💡 Client Insights: Why A Website?
-                </button>
-              )}
-              
               <div className="grid grid-cols-2 gap-2 mt-1">
                 <a
                   href={`tel:${BUSINESS_INFO.phoneRaw}`}

@@ -35,7 +35,7 @@ export const SERVICES: ServiceItem[] = [
       'Bridal touch-up kit guidance'
     ],
     popular: true,
-    image: ASSETS.bridalGlam,
+    image: ASSETS.africanBrideGlam,
   },
   {
     id: 'full-glam',
@@ -52,7 +52,7 @@ export const SERVICES: ServiceItem[] = [
       'Transfer-resistant matte or glass-gloss lip'
     ],
     popular: true,
-    image: ASSETS.heroDesktop,
+    image: ASSETS.bridalGlam,
   },
   {
     id: 'soft-glam',
@@ -68,6 +68,7 @@ export const SERVICES: ServiceItem[] = [
       'Natural wispy lash enhancement',
       'Hydrating lip oil finish'
     ],
+    image: ASSETS.softDaytimeGlam,
   },
   {
     id: 'matric-prom',
@@ -82,6 +83,7 @@ export const SERVICES: ServiceItem[] = [
       'Fluffy lash set included',
       'Ultra sweat-proof seal'
     ],
+    image: ASSETS.matricPromGlam,
   },
 
   // Lash Extensions
@@ -99,7 +101,7 @@ export const SERVICES: ServiceItem[] = [
       'Spoolie brush & aftercare instructions'
     ],
     popular: true,
-    image: ASSETS.bridalGlam,
+    image: ASSETS.volumeLashes,
   },
   {
     id: 'hybrid-lashes',
@@ -114,6 +116,7 @@ export const SERVICES: ServiceItem[] = [
       'Feather-light styling',
       'Lash care guide'
     ],
+    image: ASSETS.hybridLashes,
   },
   {
     id: 'classic-lashes',
@@ -127,6 +130,7 @@ export const SERVICES: ServiceItem[] = [
       '1:1 single lash application',
       'Comfortable lightweight feel'
     ],
+    image: ASSETS.hybridLashes,
   },
   {
     id: 'lash-refill',
@@ -140,6 +144,7 @@ export const SERVICES: ServiceItem[] = [
       'Gap filling to 100% density',
       'Fluff & bond seal'
     ],
+    image: ASSETS.volumeLashes,
   },
 
   // Wig Care, Treatment & Installations
@@ -159,7 +164,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     popular: true,
     requiresWigDropoff: true,
-    image: ASSETS.wigStyling,
+    image: ASSETS.wigWashTreatment,
   },
   {
     id: 'wig-installation-melt',
@@ -176,7 +181,7 @@ export const SERVICES: ServiceItem[] = [
       'Final heat styling & lock spray'
     ],
     popular: true,
-    image: ASSETS.wigStyling,
+    image: ASSETS.wigLaceMelt,
   },
   {
     id: 'wig-combo-deluxe',

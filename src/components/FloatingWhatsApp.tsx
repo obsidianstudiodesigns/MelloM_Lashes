@@ -50,7 +50,7 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
             className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 p-2 text-xs font-bold text-stone-950 hover:brightness-110 transition-all"
           >
             <Calendar className="h-4 w-4 shrink-0" />
-            <span>Calculate Price & Book</span>
+            <span>View Services & Book</span>
           </button>
         </div>
       )}

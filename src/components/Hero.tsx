@@ -71,31 +71,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToWig }) => {
           {/* Left / Content Column (7 cols on lg) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Top pill badge with blended logo */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 rounded-full border border-amber-500/35 bg-stone-950/80 px-3.5 py-1.5 text-xs font-semibold text-amber-300 backdrop-blur-md shadow-lg shadow-black/40"
-            >
-              <div className="h-5 w-5 overflow-hidden rounded-full border border-amber-500/50 bg-stone-900 p-0.5 shrink-0">
-                <img
-                  src={ASSETS.logo}
-                  alt="Logo"
-                  referrerPolicy="no-referrer"
-                  className="h-full w-full rounded-full object-cover"
-                />
-              </div>
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-              <span>Mamello Molise • Luxury Artistry & Salon Services</span>
-            </motion.div>
-
             {/* Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-4 font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-stone-100 leading-[1.12]"
+              className="mt-2 font-serif-luxury text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-stone-100 leading-[1.12]"
             >
               Can’t wait to glam you up for{' '}
               <span className="text-gold-gradient italic">your big day.</span>
@@ -149,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToWig }) => {
                 className="flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 px-6 py-3.5 text-sm font-bold text-stone-950 shadow-xl shadow-amber-500/25 hover:brightness-105 active:scale-98 transition-all group"
               >
                 <Calendar className="h-4 w-4 text-stone-950" />
-                <span>Calculate Price & Book Slot</span>
+                <span>Book Your Glam Slot</span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 
@@ -196,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToWig }) => {
 
           </div>
 
-          {/* Right Column: 3D Interactive Brand & Service Spotlight Card */}
+          {/* Right Column: 3D Big Day Specialist Spotlight Tile */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex justify-center">
             
             {/* Desktop 3D Tilt Card (Visible on md and up) */}
@@ -211,12 +192,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToWig }) => {
                   rotateY: rotateY,
                 }}
                 transition={{ type: 'spring', damping: 20, stiffness: 200 }}
-                className="transform-style-3d relative rounded-3xl border border-amber-500/35 bg-stone-950/90 p-5 shadow-2xl shadow-black/90 backdrop-blur-xl"
+                className="transform-style-3d relative rounded-3xl border-2 border-amber-500/40 bg-stone-950/95 p-5 shadow-2xl shadow-black/90 backdrop-blur-xl group"
               >
-                {/* Blended Brand Logo Header inside the Card */}
-                <div className="flex items-center justify-between pb-4 border-b border-stone-800/80">
+                {/* Header inside the Card */}
+                <div className="flex items-center justify-between pb-3.5 border-b border-stone-800/80">
                   <div className="flex items-center gap-3">
-                    <div className="relative h-13 w-13 overflow-hidden rounded-full border-2 border-amber-500/50 bg-stone-900 p-0.5 shadow-lg shadow-amber-500/15">
+                    <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-amber-500/50 bg-stone-900 p-0.5 shadow-lg shadow-amber-500/15 shrink-0">
                       <img
                         src={ASSETS.logo}
                         alt="MelloM Lashes Logo"
@@ -234,121 +215,115 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToWig }) => {
                     </div>
                   </div>
 
-                  <span className="rounded-full bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-1 text-[11px] font-bold text-emerald-300">
+                  <span className="rounded-full bg-emerald-500/20 border border-emerald-500/40 px-3 py-1 text-[11px] font-bold text-emerald-300">
                     Bookings Open
                   </span>
                 </div>
 
-                {/* Card Quick Preview Section */}
-                <div className="mt-4 space-y-3">
-                  <div className="rounded-2xl border border-stone-800/80 bg-stone-900/70 p-3.5">
-                    <div className="flex items-center justify-between text-xs text-stone-400">
-                      <span className="flex items-center gap-1.5 text-amber-300 font-medium">
-                        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                        Signature Bridal & Event Artistry
-                      </span>
-                      <span className="text-stone-300 font-bold">From R550</span>
-                    </div>
-                    <p className="text-xs text-stone-300 mt-1.5 leading-relaxed">
-                      HD soft and full glam makeup crafted specifically to stay flawless through tears, dancing, and photography.
-                    </p>
+                {/* 3D Photorealistic Image Showcase of African Woman with Makeup & Lashes */}
+                <div className="relative mt-4 overflow-hidden rounded-2xl border border-amber-500/30 bg-stone-900 shadow-inner">
+                  <img
+                    src={ASSETS.africanBrideGlam}
+                    alt="African woman with luxury bridal makeup and lash extensions"
+                    referrerPolicy="no-referrer"
+                    className="h-72 w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  {/* Luxury soft gradient vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
+
+                  {/* The "Big Day Specialist" Badge directly attached to the tile */}
+                  <div className="absolute top-3 left-3 rounded-full border border-amber-500/50 bg-stone-950/90 px-3.5 py-1.5 text-xs font-bold text-amber-200 shadow-xl backdrop-blur-md flex items-center gap-2">
+                    <Heart className="h-4 w-4 text-rose-400 fill-rose-400" />
+                    <span>Big Day Specialist</span>
                   </div>
 
-                  <div className="rounded-2xl border border-stone-800/80 bg-stone-900/70 p-3.5">
-                    <div className="flex items-center justify-between text-xs text-stone-400">
-                      <span className="flex items-center gap-1.5 text-amber-300 font-medium">
-                        <Clock className="h-3.5 w-3.5 text-amber-400" />
-                        Weekly Wig Drop-off & Melts
+                  {/* Lash & Makeup highlights badge */}
+                  <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-stone-700/60 bg-stone-950/85 p-2.5 backdrop-blur-md">
+                    <div className="flex items-center justify-between">
+                      <span className="flex items-center gap-1.5 text-xs font-bold text-amber-300">
+                        <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+                        HD Makeup & Volume Mink Lashes
                       </span>
-                      <span className="text-stone-300 font-bold">From R180</span>
+                      <span className="text-xs font-bold text-stone-200">From R500</span>
                     </div>
-                    <p className="text-xs text-stone-300 mt-1.5 leading-relaxed">
-                      Avoid the weekend rush! Mon–Wed drop-offs for deep wash, protein conditioning & precision lace installation.
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-stone-800/80 bg-stone-900/70 p-3.5">
-                    <div className="flex items-center justify-between text-xs text-stone-400">
-                      <span className="flex items-center gap-1.5 text-amber-300 font-medium">
-                        <MapPin className="h-3.5 w-3.5 text-amber-400" />
-                        House Calls Upon Request
-                      </span>
-                      <span className="text-stone-300 font-bold">Town / Location</span>
-                    </div>
-                    <p className="text-xs text-stone-300 mt-1.5 leading-relaxed">
-                      Distance fee transparently calculated based on town or location/township travel.
+                    <p className="text-[11px] text-stone-300 mt-1 leading-snug">
+                      Waterproof camera-ready bridal beat, sculpted brows & fluffy custom lash fans.
                     </p>
                   </div>
                 </div>
 
                 {/* Card Action Buttons */}
-                <div className="mt-5 flex items-center gap-2.5">
+                <div className="mt-4 flex items-center gap-2.5">
                   <button
                     onClick={onOpenBooking}
                     className="flex-1 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 py-3 text-xs font-bold text-stone-950 shadow-md hover:brightness-110 transition-all text-center"
                   >
-                    Configure Custom Glam Quote
+                    View Services & Book
                   </button>
 
                   <a
-                    href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=Hi%20Mamello!%20I%20am%20ready%20to%20book%20an%20appointment.`}
+                    href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=Hi%20Mamello!%20I%20love%20the%20Big%20Day%20glam%20look%20on%20your%20website%20and%20want%20to%20book%20my%20session.`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center h-10 w-10 rounded-xl border border-emerald-500/40 bg-emerald-950/60 text-emerald-400 hover:bg-emerald-900/60 transition-colors"
+                    className="flex items-center justify-center h-10 w-10 rounded-xl border border-emerald-500/40 bg-emerald-950/60 text-emerald-400 hover:bg-emerald-900/60 transition-colors shrink-0"
                     aria-label="WhatsApp Mamello Molise"
                   >
                     <MessageCircle className="h-5 w-5" />
                   </a>
                 </div>
-
-                {/* 3D Floating Sub-badge */}
-                <motion.div
-                  initial={{ y: 0 }}
-                  animate={{ y: [-3, 3, -3] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -bottom-4 -left-4 rounded-xl border border-amber-500/30 bg-stone-950/95 px-3 py-2 shadow-xl backdrop-blur-md flex items-center gap-2"
-                >
-                  <Heart className="h-4 w-4 text-rose-400 fill-rose-400" />
-                  <span className="text-xs font-bold text-stone-200">Big Day Specialist</span>
-                </motion.div>
               </motion.div>
             </div>
 
             {/* Mobile Hero Card overlay (Phones < sm) */}
             <div className="block sm:hidden w-full relative">
-              <div className="relative rounded-2xl border border-amber-500/30 bg-stone-950/90 p-4 shadow-2xl backdrop-blur-md">
-                <div className="flex items-center gap-3 pb-3 border-b border-stone-800">
-                  <div className="h-11 w-11 overflow-hidden rounded-full border border-amber-500/50 p-0.5 shrink-0">
-                    <img
-                      src={ASSETS.logo}
-                      alt="MelloM Logo"
-                      referrerPolicy="no-referrer"
-                      className="h-full w-full rounded-full object-cover"
-                    />
+              <div className="relative rounded-2xl border-2 border-amber-500/40 bg-stone-950/95 p-4 shadow-2xl backdrop-blur-md">
+                <div className="flex items-center justify-between pb-3 border-b border-stone-800">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-amber-500/50 p-0.5 shrink-0">
+                      <img
+                        src={ASSETS.logo}
+                        alt="MelloM Logo"
+                        referrerPolicy="no-referrer"
+                        className="h-full w-full rounded-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="font-serif-luxury text-base font-bold text-stone-100">
+                        MelloM Lashes & Beauty
+                      </h2>
+                      <p className="text-[11px] text-amber-400 font-medium">
+                        Big Day Specialist
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="font-serif-luxury text-lg font-bold text-stone-100">
-                      MelloM Lashes & Beauty
-                    </h2>
-                    <p className="text-[11px] text-amber-400 font-medium">
-                      Mamello Molise • {BUSINESS_INFO.phone}
-                    </p>
+                  <span className="rounded-full bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 text-[10px] font-bold text-emerald-300">
+                    Open
+                  </span>
+                </div>
+
+                {/* Mobile image preview */}
+                <div className="relative mt-3 overflow-hidden rounded-xl border border-amber-500/30">
+                  <img
+                    src={ASSETS.africanBrideGlam}
+                    alt="African woman with bridal makeup and lashes"
+                    referrerPolicy="no-referrer"
+                    className="h-52 w-full object-cover object-top"
+                  />
+                  <div className="absolute bottom-2 left-2 rounded-full border border-amber-500/50 bg-stone-950/90 px-3 py-1 text-[11px] font-bold text-amber-300 flex items-center gap-1.5">
+                    <Heart className="h-3 w-3 text-rose-400 fill-rose-400" />
+                    <span>Big Day Specialist</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-stone-300 mt-2.5 leading-relaxed">
-                  Have you arranged your wig drop-off for this week? Book your hair wash, treatment, and melt installation or glam beat today!
-                </p>
-
-                <div className="mt-3.5 flex gap-2">
+                <div className="mt-3 flex gap-2">
                   <button
                     onClick={onOpenBooking}
                     className="flex-1 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 py-2.5 text-xs font-bold text-stone-950 text-center"
                   >
-                    Book Appointment
+                    View Offerings & Book
                   </button>
                   <a
-                    href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}`}
+                    href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=Hi%20Mamello!%20I%20want%20to%20book%20a%20glam%20session.`}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-xl border border-emerald-500/40 bg-emerald-950/70 px-3.5 py-2.5 text-xs font-semibold text-emerald-300 flex items-center justify-center"
