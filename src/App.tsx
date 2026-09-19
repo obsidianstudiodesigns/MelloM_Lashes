@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { GlamInvitation } from './components/GlamInvitation';
 import { WigDropoffNotice } from './components/WigDropoffNotice';
 import { ServiceMenu } from './components/ServiceMenu';
 import { BeforeAfterGallery } from './components/BeforeAfterGallery';
@@ -62,11 +63,21 @@ export default function App() {
         onOpenBooking={scrollToServices}
       />
 
-      {/* Hero Section with Big Day Specialist 3D Tile */}
+      {/* Hero: Pure Unobstructed Wallpaper Showcase */}
       <Hero
-        onOpenBooking={scrollToServices}
-        onScrollToWig={scrollToWig}
+        onScrollDown={() => {
+          const el = document.getElementById('invitation');
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }}
       />
+
+      {/* Glam Invitation & Artistry Welcome Section */}
+      <div id="invitation">
+        <GlamInvitation
+          onOpenBooking={scrollToServices}
+          onScrollToWig={scrollToWig}
+        />
+      </div>
 
       {/* Wig Drop-off Announcement Banner */}
       <WigDropoffNotice
