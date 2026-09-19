@@ -11,11 +11,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Services & Pricing', href: '#services' },
+    { name: 'Services', href: '#services' },
     { name: 'Wig Drop-off', href: '#wig-dropoff' },
     { name: 'House Calls', href: '#house-calls' },
     { name: 'Artistry Portfolio', href: '#portfolio' },
-    { name: 'Client Reviews', href: '#reviews' },
     { name: 'FAQs', href: '#faqs' },
   ];
 

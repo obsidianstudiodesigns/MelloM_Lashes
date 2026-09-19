@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Clock, Check, MessageCircle, Heart, ArrowRight } from 'lucide-react';
+import { Sparkles, Check, MessageCircle, Heart } from 'lucide-react';
 import { ServiceCategory, ServiceItem } from '../types';
 import { SERVICES, BUSINESS_INFO } from '../data/servicesData';
 
@@ -39,16 +39,15 @@ export const ServiceMenu: React.FC<ServiceMenuProps> = ({
   };
 
   const selectedServicesList = SERVICES.filter((s) => localSelected.includes(s.id));
-  const selectedTotal = selectedServicesList.reduce((acc, curr) => acc + curr.price, 0);
 
   const createWhatsAppLink = (service: ServiceItem) => {
-    const text = `Hi Mamello! I would like to book your "${service.name}" service (R${service.price}). Could you please share your available dates and times?`;
+    const text = `Hi Mamello! I would like to book your "${service.name}" service. Could you please share your available dates and times?`;
     return `https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=${encodeURIComponent(text)}`;
   };
 
   const createMultiServiceWhatsAppLink = () => {
-    const serviceNames = selectedServicesList.map((s) => `• ${s.name} (R${s.price})`).join('\n');
-    const text = `Hi Mamello! I would like to book the following beauty services on your website:\n\n${serviceNames}\n\nTotal Estimated: R${selectedTotal}\n\nPlease let me know your available slots!`;
+    const serviceNames = selectedServicesList.map((s) => `• ${s.name}`).join('\n');
+    const text = `Hi Mamello! I would like to book the following beauty services on your website:\n\n${serviceNames}\n\nPlease let me know your available slots!`;
     return `https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=${encodeURIComponent(text)}`;
   };
 
@@ -101,7 +100,7 @@ export const ServiceMenu: React.FC<ServiceMenuProps> = ({
                   {localSelected.length}
                 </span>
                 <span className="font-semibold text-amber-800">
-                  Services Selected: Total R{selectedTotal}
+                  {localSelected.length} {localSelected.length === 1 ? 'Service' : 'Services'} Selected
                 </span>
               </div>
               <p className="text-xs text-stone-500 mt-0.5">
@@ -171,7 +170,7 @@ export const ServiceMenu: React.FC<ServiceMenuProps> = ({
 
                       {/* Top badges over image */}
                       <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
-                        <div>
+                        <div className="flex flex-wrap gap-1">
                           {service.popular && (
                             <span className="inline-flex items-center gap-1 rounded-full bg-amber-500 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-xs">
                               <Heart className="h-3 w-3 fill-white" />
@@ -179,30 +178,21 @@ export const ServiceMenu: React.FC<ServiceMenuProps> = ({
                             </span>
                           )}
                           {service.requiresWigDropoff && (
-                            <span className="inline-flex rounded-full bg-rose-600 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-xs ml-1">
+                            <span className="inline-flex rounded-full bg-rose-600 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-xs">
                               Wig Drop-off
                             </span>
                           )}
                         </div>
-
-                        <div className="rounded-full bg-white/90 border border-stone-200 px-2.5 py-0.5 text-[11px] font-semibold text-stone-800 backdrop-blur-md flex items-center gap-1 shadow-xs">
-                          <Clock className="h-3 w-3 text-amber-600" />
-                          <span>{service.duration}</span>
-                        </div>
                       </div>
 
-                      {/* Price badge anchored in image bottom */}
-                      <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                        <div className="font-serif-luxury text-2xl sm:text-3xl font-bold text-white drop-shadow-md">
-                          R{service.price}
-                        </div>
-
+                      {/* Select button anchored in image bottom right */}
+                      <div className="absolute bottom-3 right-3">
                         <button
                           onClick={() => toggleSelect(service)}
-                          className={`rounded-lg px-2.5 py-1 text-[11px] font-bold transition-colors ${
+                          className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all shadow-sm ${
                             isSelected
-                              ? 'bg-amber-500 text-white shadow-xs'
-                              : 'bg-white/90 border border-stone-200 text-stone-800 hover:bg-white'
+                              ? 'bg-amber-500 text-white'
+                              : 'bg-white/95 border border-stone-200 text-stone-800 hover:bg-white hover:text-amber-800'
                           }`}
                         >
                           {isSelected ? '✓ Selected' : '+ Select'}
@@ -246,7 +236,7 @@ export const ServiceMenu: React.FC<ServiceMenuProps> = ({
                       className="w-full flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 py-3 text-xs font-bold text-white shadow-md shadow-emerald-600/20 active:scale-98 transition-all"
                     >
                       <MessageCircle className="h-4 w-4" />
-                      <span>Book on WhatsApp (R{service.price})</span>
+                      <span>Book on WhatsApp</span>
                     </a>
                   </div>
                 </motion.div>
