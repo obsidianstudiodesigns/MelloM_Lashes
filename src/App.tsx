@@ -11,7 +11,6 @@ import { ServiceMenu } from './components/ServiceMenu';
 import { BeforeAfterGallery } from './components/BeforeAfterGallery';
 import { HouseCallGuide } from './components/HouseCallGuide';
 import { PortfolioGallery } from './components/PortfolioGallery';
-import { Testimonials } from './components/Testimonials';
 import { FAQPolicy } from './components/FAQPolicy';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -57,7 +56,7 @@ export default function App() {
   const selectedServiceIds = selectedServices.map((s) => s.id);
 
   return (
-    <div className="min-h-screen bg-[#0c0a09] text-stone-100 font-sans selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen bg-[#fdfbf7] text-stone-900 font-sans selection:bg-amber-500/20 selection:text-amber-900">
       {/* Top Navbar */}
       <Navbar
         onOpenBooking={scrollToServices}
@@ -91,9 +90,6 @@ export default function App() {
 
       {/* Visual Artistry Portfolio */}
       <PortfolioGallery />
-
-      {/* Client Reviews & Testimonials */}
-      <Testimonials />
 
       {/* FAQ & Policies */}
       <FAQPolicy />

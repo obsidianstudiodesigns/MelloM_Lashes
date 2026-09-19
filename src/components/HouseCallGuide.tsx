@@ -31,25 +31,20 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
   ];
 
   return (
-    <section id="house-calls" className="py-16 sm:py-24 bg-stone-950 border-t border-stone-800">
+    <section id="house-calls" className="py-16 sm:py-24 bg-[#faf7f2] border-t border-amber-200/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: House Call Overview */}
           <div className="lg:col-span-6">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold text-amber-300">
-              <MapPin className="h-3 w-3 text-amber-400" />
-              <span>Mobile Beauty Concierge</span>
-            </div>
-
-            <h2 className="mt-3 font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-100 leading-tight">
+            <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
               House Calls in Town & Surrounding Locations
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-stone-300 leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-stone-600 leading-relaxed">
               Prefer getting ready in the peaceful comfort of your home, bridal suite, or hotel room? 
-              <strong className="text-amber-200"> House calls are permitted upon request</strong> with a transparent 
+              <strong className="text-amber-800 font-semibold"> House calls are permitted upon request</strong> with a transparent 
               travel fee tailored to your distance.
             </p>
 
@@ -58,14 +53,14 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
               {HOUSE_CALL_TIERS.map((tier) => (
                 <div
                   key={tier.type}
-                  className="rounded-xl border border-stone-800/80 bg-stone-900/60 p-4 flex items-center justify-between gap-4"
+                  className="rounded-xl border border-amber-200/70 bg-white p-4 flex items-center justify-between gap-4 shadow-2xs"
                 >
                   <div>
-                    <div className="text-sm font-bold text-stone-100">{tier.label}</div>
-                    <div className="text-xs text-stone-400 mt-0.5">{tier.description}</div>
+                    <div className="text-sm font-bold text-stone-900">{tier.label}</div>
+                    <div className="text-xs text-stone-500 mt-0.5">{tier.description}</div>
                   </div>
                   <div className="shrink-0 text-right">
-                    <span className="font-serif-luxury text-lg font-bold text-amber-400">
+                    <span className="font-serif-luxury text-lg font-bold text-amber-700">
                       {tier.surcharge === 0 ? 'Studio Free' : `+R${tier.surcharge}`}
                     </span>
                   </div>
@@ -78,7 +73,7 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
                 href={`https://wa.me/${BUSINESS_INFO.whatsappInternational}?text=Hi%20Mamello!%20I%20would%20like%20to%20request%20a%20house%20call%20for%20a%20glam%20session.%20Here%20is%20my%20location:`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-xs sm:text-sm font-bold text-white shadow-lg active:scale-98 transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-6 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-emerald-600/20 active:scale-98 transition-all"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>Request House Call on WhatsApp</span>
@@ -86,7 +81,7 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
 
               <button
                 onClick={onBookHouseCall}
-                className="flex items-center justify-center gap-2 rounded-xl border border-amber-500/40 bg-stone-900 px-5 py-3.5 text-xs sm:text-sm font-semibold text-amber-300 hover:bg-stone-800 transition-all"
+                className="flex items-center justify-center gap-2 rounded-xl border border-stone-200 bg-white px-5 py-3.5 text-xs sm:text-sm font-semibold text-stone-800 hover:bg-stone-50 shadow-xs transition-all"
               >
                 <span>Browse Services</span>
               </button>
@@ -95,35 +90,30 @@ export const HouseCallGuide: React.FC<HouseCallGuideProps> = ({ onBookHouseCall 
 
           {/* Right Column: Setup checklist */}
           <div className="lg:col-span-6">
-            <div className="rounded-2xl border border-amber-500/30 bg-stone-900/90 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
-              <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-bold mb-4">
-                <ShieldCheck className="h-4 w-4" />
-                <span>House Call Preparation Guide</span>
-              </div>
-
-              <h3 className="font-serif-luxury text-2xl font-bold text-stone-100">
+            <div className="rounded-3xl border border-amber-200/80 bg-white/95 p-6 sm:p-8 backdrop-blur-xl shadow-xl shadow-amber-950/5">
+              <h3 className="font-serif-luxury text-2xl font-bold text-stone-900">
                 What to Prepare Before Your Artist Arrives
               </h3>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-6 space-y-3.5">
                 {preparationTips.map((tip, idx) => {
                   const Icon = tip.icon;
                   return (
-                    <div key={idx} className="flex items-start gap-3.5 rounded-xl border border-stone-800 bg-stone-950/60 p-3.5">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                        <Icon className="h-5 w-5" />
+                    <div key={idx} className="flex items-start gap-3.5 rounded-xl border border-amber-100 bg-[#fdfbf7] p-3.5">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-700 border border-amber-500/20">
+                        <Icon className="h-4 w-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-stone-100">{tip.title}</h4>
-                        <p className="text-[11px] text-stone-400 mt-0.5 leading-snug">{tip.desc}</p>
+                        <h4 className="text-xs font-bold text-stone-900">{tip.title}</h4>
+                        <p className="text-[11px] text-stone-600 mt-0.5 leading-snug">{tip.desc}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
 
-              <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-3 text-xs text-emerald-300 flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+              <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-50 p-3 text-xs text-emerald-800 flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span>Punctual arrival with hospital-grade brush sanitization between every client.</span>
               </div>
             </div>

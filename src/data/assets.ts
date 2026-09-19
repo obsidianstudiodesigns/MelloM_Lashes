@@ -10,6 +10,8 @@ import wigWashTreatmentImg from '../assets/images/wig_wash_treatment_17897380429
 import wigLaceMeltImg from '../assets/images/wig_lace_melt_1789738057275.jpg';
 import wigStylingImg from '../assets/images/wig_styling_1789731251336.jpg';
 import bridalGlamImg from '../assets/images/bridal_glam_1789731266973.jpg';
+import africanBareFaceImg from '../assets/images/african_bare_face_1789815557540.jpg';
+import africanGlamFaceImg from '../assets/images/african_glam_face_1789815572360.jpg';
 
 export const ASSETS = {
   logo: userLogoImg,
@@ -26,6 +28,8 @@ export const ASSETS = {
   wigLaceMelt: wigLaceMeltImg,
   wigStyling: wigStylingImg,
   bridalGlam: bridalGlamImg,
+  africanBareFace: africanBareFaceImg,
+  africanGlamFace: africanGlamFaceImg,
 };
 
 

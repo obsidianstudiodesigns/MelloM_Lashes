@@ -12,22 +12,18 @@ export const PortfolioGallery: React.FC = () => {
     : PORTFOLIO_ITEMS.filter((item) => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-16 sm:py-24 bg-[#0c0a09] relative">
+    <section id="portfolio" className="py-16 sm:py-24 bg-[#fdfbf7] relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold text-amber-300">
-              <Sparkles className="h-3 w-3 text-amber-400" />
-              <span>Studio Portfolio</span>
-            </div>
-            <h2 className="mt-3 font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-100">
+            <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900">
               The Art of Radiance
             </h2>
-            <p className="mt-2 text-sm text-stone-400 max-w-xl">
+            <p className="mt-3 text-sm sm:text-base text-stone-600 max-w-xl leading-relaxed">
               A curated lookbook of high-definition bridal transformations, melted lace installations, 
-              and Russian volume lash designs.
+              and signature lash designs.
             </p>
           </div>
 
@@ -35,7 +31,7 @@ export const PortfolioGallery: React.FC = () => {
             href={BUSINESS_INFO.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 rounded-xl border border-stone-800 bg-stone-900/80 px-4 py-2.5 text-xs font-semibold text-rose-300 hover:text-rose-200 hover:border-rose-500/40 transition-all self-start md:self-auto"
+            className="flex items-center gap-2 rounded-xl border border-rose-200 bg-white px-4 py-2.5 text-xs font-semibold text-rose-700 hover:bg-rose-50 hover:border-rose-300 transition-all self-start md:self-auto shadow-xs"
           >
             <Instagram className="h-4 w-4" />
             <span>Follow {BUSINESS_INFO.instagramHandle} on Instagram</span>
@@ -56,8 +52,8 @@ export const PortfolioGallery: React.FC = () => {
               onClick={() => setActiveFilter(tab.id as any)}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
                 activeFilter === tab.id
-                  ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/20'
-                  : 'border border-stone-800 bg-stone-900/60 text-stone-300 hover:border-stone-700'
+                  ? 'bg-amber-600 text-white shadow-md shadow-amber-600/20'
+                  : 'border border-amber-200/70 bg-white text-stone-700 hover:border-amber-300 shadow-2xs'
               }`}
             >
               {tab.label}
@@ -71,9 +67,9 @@ export const PortfolioGallery: React.FC = () => {
             <div
               key={item.id}
               onClick={() => setSelectedItem(item)}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-stone-800/80 bg-stone-900 shadow-xl transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-500/10"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-stone-200/90 bg-white shadow-md transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-400 hover:shadow-xl"
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-950">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -82,26 +78,26 @@ export const PortfolioGallery: React.FC = () => {
                 />
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
                 {/* Badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="rounded-full bg-stone-950/80 border border-amber-500/30 px-2.5 py-0.5 text-[10px] font-bold text-amber-300 backdrop-blur-md">
+                  <span className="rounded-full bg-white/90 border border-stone-200 px-2.5 py-0.5 text-[10px] font-bold text-stone-800 backdrop-blur-md shadow-xs">
                     {item.tag}
                   </span>
                 </div>
 
                 {/* Hover Eye Icon */}
-                <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-stone-950/70 text-stone-300 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-md">
+                <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-stone-700 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-md shadow-xs">
                   <Eye className="h-4 w-4" />
                 </div>
 
                 {/* Bottom Caption */}
                 <div className="absolute bottom-3 left-3 right-3">
-                  <h3 className="font-serif-luxury text-lg font-bold text-stone-100 group-hover:text-amber-200 transition-colors">
+                  <h3 className="font-serif-luxury text-lg font-bold text-white group-hover:text-amber-200 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-stone-300 line-clamp-1 mt-0.5">
+                  <p className="text-xs text-stone-200 line-clamp-1 mt-0.5">
                     {item.description}
                   </p>
                 </div>
@@ -114,16 +110,16 @@ export const PortfolioGallery: React.FC = () => {
 
       {/* Modal Zoom Preview */}
       {selectedItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md">
-          <div className="relative max-w-2xl w-full rounded-2xl border border-amber-500/30 bg-stone-950 p-4 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md">
+          <div className="relative max-w-2xl w-full rounded-3xl border border-amber-200 bg-white p-5 shadow-2xl">
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-stone-300 hover:text-white"
+              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200"
             >
               <X className="h-4 w-4" />
             </button>
 
-            <div className="overflow-hidden rounded-xl aspect-[4/3] w-full">
+            <div className="overflow-hidden rounded-2xl aspect-[4/3] w-full">
               <img
                 src={selectedItem.image}
                 alt={selectedItem.title}
@@ -132,14 +128,14 @@ export const PortfolioGallery: React.FC = () => {
               />
             </div>
 
-            <div className="mt-4 px-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+            <div className="mt-4 px-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-amber-700">
                 {selectedItem.tag}
               </span>
-              <h3 className="font-serif-luxury text-2xl font-bold text-stone-100 mt-1">
+              <h3 className="font-serif-luxury text-2xl font-bold text-stone-900 mt-1">
                 {selectedItem.title}
               </h3>
-              <p className="text-sm text-stone-300 mt-2">
+              <p className="text-sm text-stone-600 mt-2">
                 {selectedItem.description}
               </p>
             </div>
